@@ -125,13 +125,21 @@ temperaturas = [
     ]
 ]
 
+def calcular_promedio(tempetaruras,ciudad_ind):
+    ciudad = temperaturas[ciudad_ind]
+    suma_temperaturas = 0
+    total_dias = 0
+
+    # recorrer
+    for
+"""
 # Función para calcular el promedio de temperaturas por semana
 def calcular_promedio(ciudad):
     for semana_index, semana in enumerate(ciudad, start=1):
         suma = sum(dia['temp'] for dia in semana)
         promedio = suma / len(semana)
         print(f"Semana {semana_index}: Promedio de temperatura: {promedio:.2f}")
-
+"""
 #Menú interactivo
 while True:
     print("seleccione una ciudad ")
@@ -147,6 +155,3 @@ while True:
         calcular_promedio(temperaturas[1])
     elif opcion == "3":
         calcular_promedio(temperaturas[2])
-
-
-
