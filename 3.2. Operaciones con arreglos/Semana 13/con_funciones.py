@@ -1,7 +1,7 @@
-"""Crear una matriz 3D que represente los datos de temperaturas diarias en varias ciudades. En una dimensión, puedes tener diferentes ciudades, en otra dimensión, días de la semana (Lunes, Martes, Miércoles, etc.), y en la tercera dimensión, semanas.
-Dentro de cada celda de la matriz, puedes almacenar las temperaturas diarias para una ciudad en un día específico de una semana determinada.
-Utilizar bucles anidados para calcular el promedio de temperaturas para una ciudad por cada una de las semanas.
-Mostrar el promedio de temperaturas para cada ciudad y semana en la pantalla."""
+"""Desarrolla una función en Python que calcule la temperatura promedio de una ciudad durante un período de tiempo.
+La función debe ser capaz de manejar datos de temperaturas de múltiples ciudades y semanas.
+Utiliza como base el ejemplo anterior, donde tenías datos de 3 ciudades durante 4 semanas.
+Tu función debe recibir estos datos como parámetros y calcular la temperatura promedio de cada ciudad."""
 # Crear La Matriz en 3D
 
 # Crear una matriz 3D para almacenar datos de temperaturas
@@ -125,13 +125,22 @@ temperaturas = [
     ]
 ]
 
-def calcular_promedio(tempetaruras,ciudad_ind):
-    ciudad = temperaturas[ciudad_ind]
+# Función para calcular el promedio
+
+def calcular_promedio(tempetaruras,ciudad_idx):
+    ciudad = temperaturas[ciudad_idx]
     suma_temperaturas = 0
     total_dias = 0
+    # Recorrer las semanas
+    for semana  in ciudad:
+        for día in semana:
+            suma_temperaturas += día["temp"]
+            total_dias += 1
+    # Calcular el Promedio
+    promedio = suma_temperaturas / total_dias
+    return promedio
 
-    # recorrer
-    for
+
 """
 # Función para calcular el promedio de temperaturas por semana
 def calcular_promedio(ciudad):
@@ -150,8 +159,14 @@ while True:
 
     opcion= input("Ingrese la opcion : ")
     if opcion == "1":
-        calcular_promedio(temperaturas[0])
+        promedio = calcular_promedio(temperaturas,0)
+        print(f'el promedio {promedio:2f}')
     elif opcion == "2":
-        calcular_promedio(temperaturas[1])
+        promedio = calcular_promedio(temperaturas,1)
+        print(f'el promedio {promedio:2f}')
     elif opcion == "3":
-        calcular_promedio(temperaturas[2])
+        promedio = calcular_promedio(temperaturas,2)
+        print(f'el promedio {promedio:2f}')
+
+
+
